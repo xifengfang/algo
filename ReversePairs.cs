@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/reverse-pairs/
 # https://www.youtube.com/watch?v=TXOXKILPMVI
+# https://www.youtube.com/watch?v=j68OXAMlTM4
 
 class Solution {
     public int ReversePairs(int[] nums) {
