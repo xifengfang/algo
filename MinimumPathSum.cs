@@ -1,11 +1,11 @@
-# https://leetcode.com/problems/minimum-path-sum/
+// https://leetcode.com/problems/minimum-path-sum/
 
 class Solution
 {
-      #Recursive with memo.
-      #minPath(0,0)=grid(0,0)
-      #minPath(i,j) = grid(i,j) + min(minPath(i-1,j), minPath(i,j-1))
-      #time, space, O(mn)
+      //Recursive with memo.
+      //minPath(0,0)=grid(0,0)
+      //minPath(i,j) = grid(i,j) + min(minPath(i-1,j), minPath(i,j-1))
+      //time, space, O(mn)
       public int MinPathSum(int[][] grid)
       {
           if (grid.Length <= 0)
@@ -25,12 +25,12 @@ class Solution
           return val;
       }
       
-      #DP
-      #minPath(0,0)=grid(0,0)
-      #minPath(0,j)=grid(0,j) + minPath(0, j-1)
-      #minPath(i,0)=grid(i,0) + minPath(i-1, 0)
-      #minPath(i,j) = grid(i,j) + min(minPath(i-1,j), minPath(i,j-1))
-      #time: O(mn), space O(1)
+      //DP
+      //minPath(0,0)=grid(0,0)
+      //minPath(0,j)=grid(0,j) + minPath(0, j-1)
+      //minPath(i,0)=grid(i,0) + minPath(i-1, 0)
+      //minPath(i,j) = grid(i,j) + min(minPath(i-1,j), minPath(i,j-1))
+      //time: O(mn), space O(1)
       public int MinPathSumDP(int[][] grid)
       {
             if(grid.Length<=0)
