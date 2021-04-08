@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/
 //get connect component in a undirected graph  
    public class ConnectedSum
     {
