@@ -17,31 +17,23 @@ round_robin.next()
 ['a1','b1','c1','a2','c2','a3','c3','c4']
 */
 
-public class IndexPair {
-    public int cur_list;
-    public int cur_idx;
-    public IndexPair(int cur_list, int cur_idx) {
-      this.cur_list = cur_list;
-      this.cur_idx = cur_idx;
-    }
-}
 
 class RoundRobinIterator<T> implement Iterator {
   private List<Iterator> iters;
-  private List<IndexPair> indexQueue = new LinkedList<>();
+  private List<Pair<Integer,Integer>> indexQueue = new LinkedList<>();
   public RoundRobinIterator(List<Iterator> iters) {
     this.iters = iters;
     for(int i=0; i<iters.length(); i++){
-      indexQueue.add(new IndexPair(i,0));
+      indexQueue.add(new Pair<Integer, Integer>(i,0));
     }
   }
   public boolean hasNext() {
     return indexQueue.size()!=0;
   }
   public T next() {
-    IndexPair indexPair = indexQueue.poll();
-    int cur_list = indexPair.cur_list;
-    int cur_idx = indexPair.cur_idx;
+    Pair<Integer,Integer> indexPair = indexQueue.poll();
+    int cur_list = indexPair.getKey();
+    int cur_idx = indexPair.getValue;
     if(cur_idx + 1 != iters.get(cur_list).length()) {
       indexQueue.add(new IndexPair(cur_list, cur_idx + 1));
     }
